@@ -1,0 +1,510 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Config by lambdista</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Config</h1>
+        <p>A type safe, purely functional configuration library for Scala</p>
+
+        <p class="view"><a href="https://github.com/lambdista/config">View the Project on GitHub <small>lambdista/config</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/lambdista/config/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/lambdista/config/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/lambdista/config">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="config-a-type-safe-purely-functional-configuration-library-for-scala" class="anchor" href="#config-a-type-safe-purely-functional-configuration-library-for-scala" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>config: a type safe, purely functional configuration library for Scala</h1>
+
+<h2>
+<a id="not-only-another-typesafes-config-wrapper" class="anchor" href="#not-only-another-typesafes-config-wrapper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Not only another Typesafe's config wrapper</h2>
+
+<p>Right from the start I didn't want to depend on other config libraries when I started implementing this one so I wrote
+my own parser for a simple JSON-like syntax.
+Hence, this is not just another <a href="https://github.com/typesafehub/config">Typesafe's config</a> wrapper. Of course,
+if you are already using Typesafe's config library and/or just
+prefer <a href="https://github.com/typesafehub/config/blob/master/HOCON.md">HOCON</a> syntax for your configuration,
+there's an adapter that will convert a Typesafe <code>Config</code> object into this config's AST.
+See <a href="#typesafeConfig">this example</a>.</p>
+
+<h2>
+<a id="configuration-syntax" class="anchor" href="#configuration-syntax" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration Syntax</h2>
+
+<p>The syntax expected by this library is a JSON-superset. This means that any JSON file
+should be a valid configuration. However, the <code>null</code> JSON values can only be converted to <code>Option[A]</code>, where <code>A</code> 
+is the type you expect, because, of course, we don't fancy <code>null</code> in Scala code. The <em>superset</em> part means that:</p>
+
+<ul>
+<li>You can optionally use <code>=</code> instead of <code>:</code>
+</li>
+<li>You can avoid putting the keys between quotes, unless your key contains white spaces</li>
+<li>You can use a Scala <a href="http://www.scala-lang.org/api/current/index.html#scala.concurrent.duration.Duration">Duration</a>
+</li>
+<li>You can use a Scala <a href="http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Range">Range</a>
+</li>
+</ul>
+
+<h2>
+<a id="using-config" class="anchor" href="#using-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using config</h2>
+
+<p>As a first step you need to add the dependency to your build file:</p>
+
+<div class="highlight highlight-source-scala"><pre>libraryDependencies <span class="pl-k">+</span><span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>com.lambdista<span class="pl-pds">"</span></span> <span class="pl-k">%%</span> <span class="pl-s"><span class="pl-pds">"</span>config<span class="pl-pds">"</span></span> <span class="pl-k">%</span> configVersion</pre></div>
+
+<p>Note that <code>configVersion</code> is the version you want to use. 
+You can find all the released versions <a href="https://github.com/lambdista/config/releases">here</a>.</p>
+
+<p>At the moment only Scala 2.11.x is supported. Support for Scala 2.10.x might be added in future releases.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Ok, let's see the typical usage scenarios. As a use case consider the following configuration, unless otherwise specified:</p>
+
+<pre><code>{
+  bar = "hello",
+  baz = 42,
+  list = [1, 2, 3],
+  mapList = [
+    {
+      alpha = "hello",
+      beta = 42
+    },
+    {
+      alpha = "world",
+      beta = 24
+    }
+  ],
+  range = 2 to 10 by 2,
+  duration = 5 seconds
+}
+</code></pre>
+
+<p>Suppose the previous configuration is at the relative path will be: <code>core/src/test/resources/foo.conf</code>.</p>
+
+<p>You can move around a config choosing one of two approaches: <em>functional</em> and <em>imperative</em>.
+In the following examples you'll see both.</p>
+
+<h3>
+<a id="functional-approach" class="anchor" href="#functional-approach" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functional Approach</h3>
+
+<p>It consists in moving aroung the config through <code>map</code> and <code>flatMap</code> of the <code>Try</code> type, or, analogously, through
+the <code>for expression</code>. Here are some examples.</p>
+
+<p>First thing first, load and parse your config:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">import</span> <span class="pl-v">scala.util.</span><span class="pl-v">Try</span>
+
+<span class="pl-k">import</span> <span class="pl-v">java.nio.file.</span><span class="pl-v">Paths</span>
+
+<span class="pl-k">val</span> <span class="pl-en">confPath</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>core/src/test/resources/foo.conf<span class="pl-pds">"</span></span>
+
+<span class="pl-k">val</span> <span class="pl-en">config</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">Config</span>] <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(<span class="pl-en">Paths</span>.get(confPath))</pre></div>
+
+<p>Apart from <code>java.nio.file.Path</code> you can load your config from other resources using <a href="#configLoaders">Config Loaders</a>.</p>
+
+<p>As you can see the result is a <code>Try[Config]</code>. Indeed you can get two types of error here:</p>
+
+<ul>
+<li>The resource cannot be found.</li>
+<li>The resource can be found but its parsing failed.</li>
+</ul>
+
+<p>In both cases you would get a <code>Failure</code> wrapping the appropriate exception.</p>
+
+<p>Once you have a <code>Config</code> object you can do two main things with it:</p>
+
+<ul>
+<li>Convert it entirely into a case class representing the whole configuration.</li>
+<li>Retrieve a single value and convert it to whatever it's convertible to.</li>
+</ul>
+
+<h4>
+<a id="conversion-to-a-case-class" class="anchor" href="#conversion-to-a-case-class" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conversion to a case class</h4>
+
+<p>Here's how you would map the <code>foo.conf</code> file to a case class:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">case</span> <span class="pl-k">class</span> <span class="pl-en">Greek</span>(<span class="pl-v">alpha</span>: <span class="pl-k">String</span>, <span class="pl-v">beta</span>: <span class="pl-k">Int</span>)
+
+<span class="pl-k">case</span> <span class="pl-k">class</span> <span class="pl-en">FooConfig</span>(<span class="pl-v">bar</span>: <span class="pl-k">String</span>, <span class="pl-v">baz</span>: <span class="pl-en">Option</span>[<span class="pl-k">Int</span>], <span class="pl-v">list</span>: <span class="pl-en">List</span>[<span class="pl-k">Int</span>], <span class="pl-v">mapList</span>: <span class="pl-en">List</span>[<span class="pl-en">Greek</span>], <span class="pl-v">range</span>: <span class="pl-en">Range</span>, <span class="pl-v">duration</span>: <span class="pl-en">Duration</span>)
+
+<span class="pl-k">val</span> <span class="pl-en">fooConfig</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">FooConfig</span>] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  conf <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  result <span class="pl-k">&lt;</span><span class="pl-k">-</span> conf.tryAs[<span class="pl-en">FooConfig</span>]
+} <span class="pl-k">yield</span> result</pre></div>
+
+<p>The value of <code>fooConfig</code> will be:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-en">Success</span>(<span class="pl-en">FooConfig</span>(hello,<span class="pl-en">Some</span>(<span class="pl-c1">42</span>),<span class="pl-en">List</span>(<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>),<span class="pl-en">List</span>(<span class="pl-en">Greek</span>(hello,<span class="pl-c1">42</span>), <span class="pl-en">Greek</span>(world,<span class="pl-c1">24</span>)),<span class="pl-en">Range</span>(<span class="pl-c1">2</span>, <span class="pl-c1">4</span>, <span class="pl-c1">6</span>, <span class="pl-c1">8</span>, <span class="pl-c1">10</span>),<span class="pl-c1">5</span> seconds))</pre></div>
+
+<p>Here you can already notice some interesting features of this library:</p>
+
+<ul>
+<li>The conversion to a case class happens automatically, no boilerplate on the client side is required.</li>
+<li>Since <code>baz</code> is declared as <code>Option[Int]</code> the library automatically wraps the <code>Int</code> value into a <code>Some</code>.</li>
+<li>The automatic conversion works also for nested structures, see <code>mapList</code> for example.</li>
+<li>
+<code>Range</code> and <code>Duration</code> work like a charm. Note that for both <code>Range</code> and <code>Duration</code> you can use the syntax you
+would use in regular Scala code. For example, you could have used <code>5 secs</code> instead of <code>5 seconds</code> in <code>foo.conf</code> and
+it would have worked smoothly.</li>
+</ul>
+
+<h4>
+<a id="retrieve-and-convert-a-single-value" class="anchor" href="#retrieve-and-convert-a-single-value" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve and convert a single value</h4>
+
+<p>Instead of using a case class you may want to retrieve the single values and convert them as you go:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">bar</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-k">String</span>] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  conf <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  result <span class="pl-k">&lt;</span><span class="pl-k">-</span> conf.tryGet[<span class="pl-k">String</span>](<span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>)
+} <span class="pl-k">yield</span> result</pre></div>
+
+<p>The value of <code>bar</code> will be:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-en">Success</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>)</pre></div>
+
+<p>You can also use the <em>dot</em> syntax to retrieve a value. For example suppose you have the following configuration:</p>
+
+<pre><code>{
+  foo = {
+    bar = 42
+  }
+}
+</code></pre>
+
+<p>Once loaded you could retrieve the <code>bar</code> value as follows:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-c">// val config: Try[Config] = ...</span>
+
+<span class="pl-k">val</span> <span class="pl-en">bar</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-k">Int</span>] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  c <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  bar <span class="pl-k">&lt;</span><span class="pl-k">-</span> c.tryGet[<span class="pl-k">Int</span>](<span class="pl-s"><span class="pl-pds">"</span>foo.bar<span class="pl-pds">"</span></span>)
+} <span class="pl-k">yield</span> bar</pre></div>
+
+<p>Apart from converting the whole config into a case class, you can also convert a given value provided it's an object in
+the JSON-superset syntax:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">greekList</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">List</span>[<span class="pl-en">Greek</span>]] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  conf <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  result <span class="pl-k">&lt;</span><span class="pl-k">-</span> conf.tryGet[<span class="pl-en">List</span>[<span class="pl-en">Greek</span>]](<span class="pl-s"><span class="pl-pds">"</span>mapList<span class="pl-pds">"</span></span>)
+} <span class="pl-k">yield</span> result</pre></div>
+
+<p>The value of <code>greekList</code> will be:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-en">Success</span>(<span class="pl-en">List</span>(<span class="pl-en">Greek</span>(hello,<span class="pl-c1">42</span>), <span class="pl-en">Greek</span>(world,<span class="pl-c1">24</span>)))</pre></div>
+
+<p>Sorry? You said you would have preferred a <code>Vector[Greek]</code> in place of <code>List[Greek]</code>? No problem:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">greekVector</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">Vector</span>[<span class="pl-en">Greek</span>]] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  conf <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  result <span class="pl-k">&lt;</span><span class="pl-k">-</span> conf.tryGet[<span class="pl-en">Vector</span>[<span class="pl-en">Greek</span>]](<span class="pl-s"><span class="pl-pds">"</span>mapList<span class="pl-pds">"</span></span>)
+} <span class="pl-k">yield</span> result</pre></div>
+
+<p>Here's the value of <code>greekVector</code>:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-en">Success</span>(<span class="pl-en">Vector</span>(<span class="pl-en">Greek</span>(hello,<span class="pl-c1">42</span>), <span class="pl-en">Greek</span>(world,<span class="pl-c1">24</span>)))</pre></div>
+
+<p>Oh, yes, <code>Set[Greek]</code> would have worked too:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">greekSet</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">Set</span>[<span class="pl-en">Greek</span>]] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  conf <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  result <span class="pl-k">&lt;</span><span class="pl-k">-</span> conf.tryGet[<span class="pl-en">Set</span>[<span class="pl-en">Greek</span>]](<span class="pl-s"><span class="pl-pds">"</span>mapList<span class="pl-pds">"</span></span>)
+} <span class="pl-k">yield</span> result</pre></div>
+
+<p>Here's the value of <code>greekSet</code>:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-en">Success</span>(<span class="pl-en">Set</span>(<span class="pl-en">Greek</span>(hello,<span class="pl-c1">42</span>), <span class="pl-en">Greek</span>(world,<span class="pl-c1">24</span>)))</pre></div>
+
+<p>Analogously you can automatically convert a <code>Range</code> into a <code>List</code>, <code>Vector</code> or <code>Set</code>:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">rangeAsList</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">List</span>[<span class="pl-k">Int</span>]] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  conf <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  result <span class="pl-k">&lt;</span><span class="pl-k">-</span> conf.tryGet[<span class="pl-en">List</span>[<span class="pl-k">Int</span>]](<span class="pl-s"><span class="pl-pds">"</span>range<span class="pl-pds">"</span></span>)
+} <span class="pl-k">yield</span> result
+
+<span class="pl-k">val</span> <span class="pl-en">rangeAsVector</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">Vector</span>[<span class="pl-k">Int</span>]] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  conf <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  result <span class="pl-k">&lt;</span><span class="pl-k">-</span> conf.tryGet[<span class="pl-en">Vector</span>[<span class="pl-k">Int</span>]](<span class="pl-s"><span class="pl-pds">"</span>range<span class="pl-pds">"</span></span>)
+} <span class="pl-k">yield</span> result
+
+<span class="pl-k">val</span> <span class="pl-en">rangeAsSet</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">Set</span>[<span class="pl-k">Int</span>]] <span class="pl-k">=</span> <span class="pl-k">for</span> {
+  conf <span class="pl-k">&lt;</span><span class="pl-k">-</span> config
+  result <span class="pl-k">&lt;</span><span class="pl-k">-</span> conf.tryGet[<span class="pl-en">Set</span>[<span class="pl-k">Int</span>]](<span class="pl-s"><span class="pl-pds">"</span>range<span class="pl-pds">"</span></span>)
+} <span class="pl-k">yield</span> result</pre></div>
+
+<p>Here are the results:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-en">Success</span>(<span class="pl-en">List</span>(<span class="pl-c1">2</span>, <span class="pl-c1">4</span>, <span class="pl-c1">6</span>, <span class="pl-c1">8</span>, <span class="pl-c1">10</span>)) <span class="pl-c">// rangeAsList</span>
+
+<span class="pl-en">Success</span>(<span class="pl-en">Vector</span>(<span class="pl-c1">2</span>, <span class="pl-c1">4</span>, <span class="pl-c1">6</span>, <span class="pl-c1">8</span>, <span class="pl-c1">10</span>)) <span class="pl-c">// rangeAsVector</span>
+
+<span class="pl-en">Success</span>(<span class="pl-en">Set</span>(<span class="pl-c1">4</span>, <span class="pl-c1">2</span>, <span class="pl-c1">8</span>, <span class="pl-c1">6</span>, <span class="pl-c1">10</span>)) <span class="pl-c">// rangeAsSet</span></pre></div>
+
+<p>Notice, however, that in case of <code>Set</code> the order is not guaranteed because of the very nature of sets.</p>
+
+<h3>
+<a id="imperative-approach" class="anchor" href="#imperative-approach" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Imperative Approach</h3>
+
+<p>If you feel <em>confident</em> and prefer not to move within a <code>Try</code> you can opt for the <em>imperative</em> fashion. In this case, 
+if the config element is not found or cannot be converted into the desired type an exception is thrown.
+Here's an example:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">config</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(<span class="pl-en">Paths</span>.get(confPath)).get <span class="pl-c">// calling .get you "get out" of the Try type</span>
+
+<span class="pl-k">val</span> <span class="pl-en">fooConfig</span><span class="pl-k">:</span> <span class="pl-en">FooConfig</span> <span class="pl-k">=</span> config.as[<span class="pl-en">FooConfig</span>] <span class="pl-c">// conversion to a case class...</span>
+
+<span class="pl-c">// ...or just retrieve the config elements one by one as in the following cases</span>
+<span class="pl-k">val</span> <span class="pl-en">bar</span><span class="pl-k">:</span> <span class="pl-k">String</span> <span class="pl-k">=</span> config.get[<span class="pl-k">String</span>](<span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>)
+<span class="pl-k">val</span> <span class="pl-en">range</span><span class="pl-k">:</span> <span class="pl-en">Range</span> <span class="pl-k">=</span> config.get[<span class="pl-en">Range</span>](<span class="pl-s"><span class="pl-pds">"</span>range<span class="pl-pds">"</span></span>)</pre></div>
+
+<p>Of course you could also retrieve optional values from config and fall back on defaults in case they're missing:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">age</span><span class="pl-k">:</span> <span class="pl-k">Int</span> <span class="pl-k">=</span> config.tryGet[<span class="pl-k">Int</span>](<span class="pl-s"><span class="pl-pds">"</span>age<span class="pl-pds">"</span></span>).getOrElse(<span class="pl-c1">42</span>) <span class="pl-c">// result -&gt; 42</span></pre></div>
+
+<p><a name="configLoaders"></a></p>
+
+<h3>
+<a id="config-loaders" class="anchor" href="#config-loaders" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Loaders</h3>
+
+<p>Apart from loading your config through a <code>java.nio.file.Path</code> you can also use the following resources:</p>
+
+<ul>
+<li>String</li>
+<li>java.io.File</li>
+<li>scala.io.Source</li>
+<li>java.net.URI</li>
+<li>java.net.URL</li>
+<li>com.typesafe.config.Config</li>
+</ul>
+
+<p>If that's not enough it's not so difficult provide your implementation of the <code>ConfigLoader</code> type class and make it
+available in scope. Here's how the <code>ConfigLoader</code> looks like:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">trait</span> <span class="pl-en">ConfigLoader</span>[<span class="pl-en">R</span>] {
+  <span class="pl-k">def</span> <span class="pl-en">load</span>(<span class="pl-v">resource</span>: <span class="pl-en">R</span>)<span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">Config</span>]
+}</pre></div>
+
+<p>Actually all you need to do is find a way to <em>read</em> your resource into a <code>String</code> and your done. Have a look at the
+<code>ConfigLoader</code> companion object for some examples.</p>
+
+<h4>
+<a id="loading-config-from-a-simple-string" class="anchor" href="#loading-config-from-a-simple-string" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loading config from a simple String</h4>
+
+<p>What follows is an example of loading the config from a simple <code>String</code>. In this example you can also appreciate
+two other features of the library: how it deals with <code>null</code> values and its ability to convert char ranges too.</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">confStr</span><span class="pl-k">:</span> <span class="pl-k">String</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>{age = null, charRange = 'a' to 'z'}<span class="pl-pds">"</span></span>
+
+<span class="pl-k">val</span> <span class="pl-en">config</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(confStr).get
+
+<span class="pl-k">val</span> <span class="pl-en">age</span><span class="pl-k">:</span> <span class="pl-en">Option</span>[<span class="pl-k">Int</span>] <span class="pl-k">=</span> config.get[<span class="pl-en">Option</span>[<span class="pl-k">Int</span>]](<span class="pl-s"><span class="pl-pds">"</span>age<span class="pl-pds">"</span></span>)
+
+<span class="pl-k">val</span> <span class="pl-en">charRange</span><span class="pl-k">:</span> <span class="pl-en">List</span>[<span class="pl-k">Char</span>] <span class="pl-k">=</span> config.get[<span class="pl-en">List</span>[<span class="pl-k">Char</span>]](<span class="pl-s"><span class="pl-pds">"</span>charRange<span class="pl-pds">"</span></span>)</pre></div>
+
+<p>As you may expect the values of <code>age</code> and <code>charRange</code> will be:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-c1">None</span> <span class="pl-c">// age</span>
+
+<span class="pl-en">List</span>(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z) <span class="pl-c">// charRange</span></pre></div>
+
+<p><a name="typesafeConfig"></a></p>
+
+<h4>
+<a id="loading-a-config-from-typesafe-config" class="anchor" href="#loading-a-config-from-typesafe-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loading a config from Typesafe Config</h4>
+
+<p>Here's how simple is loading a configuration passing through Typesafe config library. First thing first, you need to add
+the dependency for the Typesafe config adapter:</p>
+
+<div class="highlight highlight-source-scala"><pre>libraryDependencies <span class="pl-k">+</span><span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>com.lambdista<span class="pl-pds">"</span></span> <span class="pl-k">%%</span> <span class="pl-s"><span class="pl-pds">"</span>config-typesafe<span class="pl-pds">"</span></span> <span class="pl-k">%</span> configVersion</pre></div>
+
+<p><code>configVersion</code> is the same you used for the core library.</p>
+
+<p>The example configuration is the following:</p>
+
+<pre><code>string = "hello"
+int = 42
+double = 1.414
+boolean = true
+list = [1, 2, 3]
+mapList = [
+  {
+    firstName = "John"
+    lastName = "Doe"
+  }
+  {
+    firstName = "Jane"
+    lastName = "Doe"
+  }
+]
+</code></pre>
+
+<p>Suppose it's in a file at the relative path <code>typesafe/src/test/resources/typesafe.conf</code>:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">import</span> <span class="pl-v">scala.util.</span><span class="pl-v">Try</span>
+
+<span class="pl-k">import</span> <span class="pl-v">java.io.</span><span class="pl-v">File</span>
+<span class="pl-k">import</span> <span class="pl-v">com.typesafe.config.</span>{<span class="pl-v">Config</span> <span class="pl-k">=&gt;</span> <span class="pl-v">TSConfig</span>, <span class="pl-v">ConfigFactory</span>}
+<span class="pl-k">import</span> <span class="pl-v">com.lambdista.config.typesafe.</span><span class="pl-v">_ </span><span class="pl-c">// important to bring into scope the ConfigLoader for Typesafe's Config</span>
+
+<span class="pl-k">case</span> <span class="pl-k">class</span> <span class="pl-en">Person</span>(<span class="pl-v">firstName</span>: <span class="pl-k">String</span>, <span class="pl-v">lastName</span>: <span class="pl-k">String</span>)
+
+<span class="pl-k">case</span> <span class="pl-k">class</span> <span class="pl-en">TypesafeConfig</span>(<span class="pl-v">string</span>: <span class="pl-k">String</span>, <span class="pl-v">int</span>: <span class="pl-k">Int</span>, <span class="pl-v">double</span>: <span class="pl-k">Double</span>, <span class="pl-v">boolean</span>: <span class="pl-k">Boolean</span>, <span class="pl-v">list</span>: <span class="pl-en">List</span>[<span class="pl-k">Int</span>], <span class="pl-v">mapList</span>: <span class="pl-en">List</span>[<span class="pl-en">Person</span>])
+
+<span class="pl-k">val</span> <span class="pl-en">confPath</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>typesafe/src/test/resources/typesafe.conf<span class="pl-pds">"</span></span>
+
+<span class="pl-k">val</span> <span class="pl-en">tsConfig</span><span class="pl-k">:</span> <span class="pl-en">TSConfig</span> <span class="pl-k">=</span> <span class="pl-en">ConfigFactory</span>.parseFile(<span class="pl-k">new</span> <span class="pl-en">File</span>(confPath))
+
+<span class="pl-k">val</span> <span class="pl-en">configTry</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">Config</span>] <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(tsConfig)
+
+<span class="pl-k">val</span> <span class="pl-en">typesafeConfigTry</span><span class="pl-k">:</span> <span class="pl-en">Try</span>[<span class="pl-en">TypesafeConfig</span>] <span class="pl-k">=</span> config.flatMap(_.tryAs[<span class="pl-en">TypesafeConfig</span>])
+
+<span class="pl-c">// or, using the "imperative" way, outside the Try</span>
+<span class="pl-k">val</span> <span class="pl-en">config</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(tsConfig).get
+
+<span class="pl-k">val</span> <span class="pl-en">typesafeConfig</span><span class="pl-k">:</span> <span class="pl-en">TypesafeConfig</span> <span class="pl-k">=</span> config.as[<span class="pl-en">TypesafeConfig</span>]</pre></div>
+
+<p>The value of <code>typesafeConfig</code> and <code>typesafeConfigTry</code> will be:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-en">TypesafeConfig</span>(hello,<span class="pl-c1">42</span>,<span class="pl-c1">1.414</span>,<span class="pl-c1">true</span>,<span class="pl-en">List</span>(<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>),<span class="pl-en">List</span>(<span class="pl-en">Person</span>(<span class="pl-en">John</span>,<span class="pl-en">Doe</span>), <span class="pl-en">Person</span>(<span class="pl-en">Jane</span>,<span class="pl-en">Doe</span>))) <span class="pl-c">// typesafeConfig</span>
+
+<span class="pl-en">Success</span>(<span class="pl-en">TypesafeConfig</span>(hello,<span class="pl-c1">42</span>,<span class="pl-c1">1.414</span>,<span class="pl-c1">true</span>,<span class="pl-en">List</span>(<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>),<span class="pl-en">List</span>(<span class="pl-en">Person</span>(<span class="pl-en">John</span>,<span class="pl-en">Doe</span>), <span class="pl-en">Person</span>(<span class="pl-en">Jane</span>,<span class="pl-en">Doe</span>)))) <span class="pl-c">// typesafeConfigTry</span></pre></div>
+
+<h3>
+<a id="merging-two-configurations" class="anchor" href="#merging-two-configurations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Merging two configurations</h3>
+
+<p>You can also merge two configurations using the <code>softMerge</code> or <code>hardMerge</code> methods of <code>Config</code>, 
+as in <code>config.softMerge(thatConfig)</code> or <code>config.hardMerge(thatConfig)</code>. The behaviour of the
+former is that, given a key, if the correspondent value is a map then <code>thatConfig</code>'s value is
+<em>softly</em> merged to this config's value otherwise <code>thatConfig</code>'s value replaces this config's value. An example should
+clarify it:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">confStr1</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">{</span>
+<span class="pl-s">  foo = {</span>
+<span class="pl-s">    alpha = 1,</span>
+<span class="pl-s">    bar = "hello"</span>
+<span class="pl-s">  },</span>
+<span class="pl-s">  baz = 42</span>
+<span class="pl-s">}</span>
+<span class="pl-s"><span class="pl-pds">"""</span></span>
+
+<span class="pl-k">val</span> <span class="pl-en">confStr2</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">{</span>
+<span class="pl-s">  foo = {</span>
+<span class="pl-s">    baz = 15,</span>
+<span class="pl-s">    bar = "goodbye"</span>
+<span class="pl-s">  },</span>
+<span class="pl-s">  baz = 1,</span>
+<span class="pl-s">  zoo = "hi"</span>
+<span class="pl-s">}</span>
+<span class="pl-s"><span class="pl-pds">"""</span></span>
+
+<span class="pl-k">val</span> <span class="pl-en">config1</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(confStr1).get
+
+<span class="pl-k">val</span> <span class="pl-en">config2</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(confStr2).get
+
+<span class="pl-k">val</span> <span class="pl-en">mergedConfig</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> config1.softMerge(config2)</pre></div>
+
+<p><code>mergedConfig</code> will represent a config such as the following:</p>
+
+<pre><code>{
+  foo = {
+    alpha = 1,
+    baz = 15,
+    bar = "goodbye"
+  },
+  baz = 1,
+  zoo = "hi"
+}
+</code></pre>
+
+<p>As you can see the value of <code>config2</code>'s <code>foo</code> did not replace entirely the value of <code>config1</code>'s <code>foo</code>, but they
+were <em>softly</em> merged.</p>
+
+<p>On the other hand <code>hardMerge</code>'s behaviour is more like Scala's default behaviour when using <code>++</code> between two <code>Map</code>s and
+<code>config2</code>'s values replace entirely <code>config1</code>'s values with the same key. E.g.:</p>
+
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-en">confStr1</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">{</span>
+<span class="pl-s">  foo = {</span>
+<span class="pl-s">    alpha = 1,</span>
+<span class="pl-s">    bar = "hello"</span>
+<span class="pl-s">  },</span>
+<span class="pl-s">  zoo = "hi",</span>
+<span class="pl-s">  baz = 42</span>
+<span class="pl-s">}</span>
+<span class="pl-s"><span class="pl-pds">"""</span></span>
+
+<span class="pl-k">val</span> <span class="pl-en">confStr2</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">{</span>
+<span class="pl-s">  foo = {</span>
+<span class="pl-s">    baz = 15,</span>
+<span class="pl-s">    bar = "goodbye"</span>
+<span class="pl-s">  },</span>
+<span class="pl-s">  baz = 1</span>
+<span class="pl-s">}</span>
+<span class="pl-s"><span class="pl-pds">"""</span></span>
+
+<span class="pl-k">val</span> <span class="pl-en">config1</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(confStr1).get
+
+<span class="pl-k">val</span> <span class="pl-en">config2</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> <span class="pl-en">Config</span>.from(confStr2).get
+
+<span class="pl-k">val</span> <span class="pl-en">mergedConfig</span><span class="pl-k">:</span> <span class="pl-en">Config</span> <span class="pl-k">=</span> config1.softMerge(config2)</pre></div>
+
+<p><code>mergedConfig</code> will represent a config such as the following:</p>
+
+<pre><code>{
+  foo = {
+    baz = 15,
+    bar = "goodbye"
+  },
+  baz = 1,
+  zoo = "hi"
+}
+</code></pre>
+
+<p>Look at the tests for this library to see the examples in practise.</p>
+
+<h2>
+<a id="bugs-and-feedback" class="anchor" href="#bugs-and-feedback" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bugs and Feedback</h2>
+
+<p>For bugs, questions and discussions please use <a href="https://github.com/lambdista/config/issues">Github Issues</a>.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright 2016 Alessandro Lacava.</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+with the License. You may obtain a copy of the License at</p>
+
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and limitations under the License.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/lambdista">lambdista</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
