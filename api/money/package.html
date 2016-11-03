@@ -1,0 +1,3275 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>money - money</title>
+          <meta name="description" content="money - money" />
+          <meta name="keywords" content="money money" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'money.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../lib/package_big.png" />
+        
+        <h1>money</h1><span class="permalink">
+      <a href="../index.html#money.package" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">money</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This package object contains utility functions and type aliases
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2014-10-27</p></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="money"><span>money</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="money.BigDecimalOps" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BigDecimalOpsextendsAnyVal"></a>
+      <a id="BigDecimalOps:BigDecimalOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$BigDecimalOps.html"><span class="name">BigDecimalOps</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BigDecimalOpsextendsAnyVal" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"> Extensions for this DSL.</p>
+    </li><li name="money.Conversion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Conversion=Map[(money.Currency,money.Currency),BigDecimal]"></a>
+      <a id="Conversion:Conversion"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Conversion</span><span class="result"> = <span class="extype" name="scala.collection.immutable.Map">Map</span>[(<a href="Currency.html" class="extype" name="money.Currency">Currency</a>, <a href="Currency.html" class="extype" name="money.Currency">Currency</a>), <span class="extype" name="scala.BigDecimal">BigDecimal</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@Conversion=Map[(money.Currency,money.Currency),BigDecimal]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="money.Converter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ConverterextendsProductwithSerializable"></a>
+      <a id="Converter:Converter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Converter.html"><span class="name">Converter</span></a><span class="params">(<span name="conversion">conversion: <a href="#Conversion=Map[(money.Currency,money.Currency),BigDecimal]" class="extmbr" name="money.Conversion">Conversion</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ConverterextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class is responsible for performing <code>Currency</code> conversions.</p><div class="fullcomment"><div class="comment cmt"><p>This class is responsible for performing <code>Currency</code> conversions.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2015-03-07</p></dd></dl></div>
+    </li><li name="money.Currency" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CurrencyextendsAnyRef"></a>
+      <a id="Currency:Currency"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Currency.html"><span class="name">Currency</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CurrencyextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Generic Currency
+</p><div class="fullcomment"><div class="comment cmt"><p>Generic Currency
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2014-10-27</p></dd></dl></div>
+    </li><li name="money.DoubleOps" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DoubleOpsextendsAnyVal"></a>
+      <a id="DoubleOps:DoubleOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$DoubleOps.html"><span class="name">DoubleOps</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@DoubleOpsextendsAnyVal" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="money.IntOps" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IntOpsextendsAnyVal"></a>
+      <a id="IntOps:IntOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$IntOps.html"><span class="name">IntOps</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@IntOpsextendsAnyVal" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="money.Money" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MoneyextendsOrdered[money.Money]withProductwithSerializable"></a>
+      <a id="Money:Money"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Money.html"><span class="name">Money</span></a><span class="params">(<span name="amount">amount: <span class="extype" name="scala.BigDecimal">BigDecimal</span></span>, <span name="currency">currency: <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="converter">converter: <a href="Converter.html" class="extype" name="money.Converter">Converter</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Ordered">Ordered</span>[<a href="Money.html" class="extype" name="money.Money">Money</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MoneyextendsOrdered[money.Money]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This is the main class of the lib.</p><div class="fullcomment"><div class="comment cmt"><p>This is the main class of the lib. A Money is represented by its <code>amount</code> and <code>currency</code>.
+</p></div><dl class="paramcmts block"><dt class="param">amount</dt><dd class="cmt"><p>the amount of this money</p></dd><dt class="param">currency</dt><dd class="cmt"><p>the currency for this money</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2014-10-27</p></dd></dl></div>
+    </li><li name="money.NumericMoney" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NumericMoneyextendsNumeric[money.Money]"></a>
+      <a id="NumericMoney:NumericMoney"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NumericMoney.html"><span class="name">NumericMoney</span></a><span class="result"> extends <span class="extype" name="scala.Numeric">Numeric</span>[<a href="Money.html" class="extype" name="money.Money">Money</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@NumericMoneyextendsNumeric[money.Money]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><code>Numeric</code> implementation for <a href="Money.html" class="extype" name="money.Money">money.Money</a>
+</p><div class="fullcomment"><div class="comment cmt"><p><code>Numeric</code> implementation for <a href="Money.html" class="extype" name="money.Money">money.Money</a>
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2015-06-18</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="money.AED" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AED"></a>
+      <a id="AED:AED"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AED$.html"><span class="name">AED</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@AED" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">United Arab Emirates Dirham
+</p>
+    </li><li name="money.AFN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AFN"></a>
+      <a id="AFN:AFN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AFN$.html"><span class="name">AFN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@AFN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Afghanistan Afghani
+</p>
+    </li><li name="money.ALL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ALL"></a>
+      <a id="ALL:ALL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ALL$.html"><span class="name">ALL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ALL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Albania Lek
+</p>
+    </li><li name="money.AMD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AMD"></a>
+      <a id="AMD:AMD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AMD$.html"><span class="name">AMD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@AMD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Armenia Dram
+</p>
+    </li><li name="money.ANG" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ANG"></a>
+      <a id="ANG:ANG"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ANG$.html"><span class="name">ANG</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ANG" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Netherlands Antilles Guilder
+</p>
+    </li><li name="money.AOA" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AOA"></a>
+      <a id="AOA:AOA"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AOA$.html"><span class="name">AOA</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@AOA" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Angola Kwanza
+</p>
+    </li><li name="money.ARS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ARS"></a>
+      <a id="ARS:ARS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ARS$.html"><span class="name">ARS</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ARS" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Argentina Peso
+</p>
+    </li><li name="money.AUD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AUD"></a>
+      <a id="AUD:AUD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AUD$.html"><span class="name">AUD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@AUD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Australia Dollar
+</p>
+    </li><li name="money.AWG" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AWG"></a>
+      <a id="AWG:AWG"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AWG$.html"><span class="name">AWG</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@AWG" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Aruba Guilder
+</p>
+    </li><li name="money.AZN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AZN"></a>
+      <a id="AZN:AZN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AZN$.html"><span class="name">AZN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@AZN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Azerbaijan New Manat
+</p>
+    </li><li name="money.BAM" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BAM"></a>
+      <a id="BAM:BAM"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BAM$.html"><span class="name">BAM</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BAM" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bosnia and Herzegovina Convertible Marka
+</p>
+    </li><li name="money.BBD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BBD"></a>
+      <a id="BBD:BBD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BBD$.html"><span class="name">BBD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BBD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Barbados Dollar
+</p>
+    </li><li name="money.BDT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BDT"></a>
+      <a id="BDT:BDT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BDT$.html"><span class="name">BDT</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BDT" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bangladesh Taka
+</p>
+    </li><li name="money.BGN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BGN"></a>
+      <a id="BGN:BGN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BGN$.html"><span class="name">BGN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BGN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bulgaria Lev
+</p>
+    </li><li name="money.BHD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BHD"></a>
+      <a id="BHD:BHD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BHD$.html"><span class="name">BHD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BHD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bahrain Dinar
+</p>
+    </li><li name="money.BIF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BIF"></a>
+      <a id="BIF:BIF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BIF$.html"><span class="name">BIF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BIF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Burundi Franc
+</p>
+    </li><li name="money.BMD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BMD"></a>
+      <a id="BMD:BMD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BMD$.html"><span class="name">BMD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BMD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bermuda Dollar
+</p>
+    </li><li name="money.BND" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BND"></a>
+      <a id="BND:BND"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BND$.html"><span class="name">BND</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BND" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Brunei Darussalam Dollar
+</p>
+    </li><li name="money.BOB" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOB"></a>
+      <a id="BOB:BOB"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BOB$.html"><span class="name">BOB</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BOB" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bolivia Boliviano
+</p>
+    </li><li name="money.BRL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BRL"></a>
+      <a id="BRL:BRL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BRL$.html"><span class="name">BRL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BRL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Brazil Real
+</p>
+    </li><li name="money.BSD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BSD"></a>
+      <a id="BSD:BSD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BSD$.html"><span class="name">BSD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BSD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bahamas Dollar
+</p>
+    </li><li name="money.BTN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BTN"></a>
+      <a id="BTN:BTN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BTN$.html"><span class="name">BTN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BTN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bhutan Ngultrum
+</p>
+    </li><li name="money.BWP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BWP"></a>
+      <a id="BWP:BWP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BWP$.html"><span class="name">BWP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BWP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Botswana Pula
+</p>
+    </li><li name="money.BYR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BYR"></a>
+      <a id="BYR:BYR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BYR$.html"><span class="name">BYR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BYR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Belarus Ruble
+</p>
+    </li><li name="money.BZD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BZD"></a>
+      <a id="BZD:BZD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BZD$.html"><span class="name">BZD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@BZD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Belize Dollar
+</p>
+    </li><li name="money.CAD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CAD"></a>
+      <a id="CAD:CAD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CAD$.html"><span class="name">CAD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CAD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Canada Dollar
+</p>
+    </li><li name="money.CDF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CDF"></a>
+      <a id="CDF:CDF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CDF$.html"><span class="name">CDF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CDF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Congo/Kinshasa Franc
+</p>
+    </li><li name="money.CHF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CHF"></a>
+      <a id="CHF:CHF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CHF$.html"><span class="name">CHF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CHF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Switzerland Franc
+</p>
+    </li><li name="money.CLP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CLP"></a>
+      <a id="CLP:CLP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CLP$.html"><span class="name">CLP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CLP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Chile Peso
+</p>
+    </li><li name="money.CNY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CNY"></a>
+      <a id="CNY:CNY"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CNY$.html"><span class="name">CNY</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CNY" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">China Yuan Renminbi
+</p>
+    </li><li name="money.COP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="COP"></a>
+      <a id="COP:COP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="COP$.html"><span class="name">COP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@COP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Colombia Peso
+</p>
+    </li><li name="money.CRC" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CRC"></a>
+      <a id="CRC:CRC"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CRC$.html"><span class="name">CRC</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CRC" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Costa Rica Colon
+</p>
+    </li><li name="money.CUC" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CUC"></a>
+      <a id="CUC:CUC"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CUC$.html"><span class="name">CUC</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CUC" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cuba Convertible Peso
+</p>
+    </li><li name="money.CUP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CUP"></a>
+      <a id="CUP:CUP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CUP$.html"><span class="name">CUP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CUP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cuba Peso
+</p>
+    </li><li name="money.CVE" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CVE"></a>
+      <a id="CVE:CVE"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CVE$.html"><span class="name">CVE</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CVE" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cape Verde Escudo
+</p>
+    </li><li name="money.CZK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CZK"></a>
+      <a id="CZK:CZK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CZK$.html"><span class="name">CZK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@CZK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Czech Republic Koruna
+</p>
+    </li><li name="money.Converter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Converter"></a>
+      <a id="Converter:Converter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Converter$.html"><span class="name">Converter</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@Converter" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="money.Currency" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Currency"></a>
+      <a id="Currency:Currency"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Currency$.html"><span class="name">Currency</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@Currency" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="money#DEFAULT_CURRENCY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DEFAULT_CURRENCY:money.USD.type"></a>
+      <a id="DEFAULT_CURRENCY:USD.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DEFAULT_CURRENCY</span><span class="result">: <a href="USD$.html" class="extype" name="money.USD">USD</a>.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@DEFAULT_CURRENCY:money.USD.type" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="money.DJF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DJF"></a>
+      <a id="DJF:DJF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DJF$.html"><span class="name">DJF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@DJF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Djibouti Franc
+</p>
+    </li><li name="money.DKK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DKK"></a>
+      <a id="DKK:DKK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DKK$.html"><span class="name">DKK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@DKK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Denmark Krone
+</p>
+    </li><li name="money.DOP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DOP"></a>
+      <a id="DOP:DOP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DOP$.html"><span class="name">DOP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@DOP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Dominican Republic Peso
+</p>
+    </li><li name="money.DZD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DZD"></a>
+      <a id="DZD:DZD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DZD$.html"><span class="name">DZD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@DZD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Algeria Dinar
+</p>
+    </li><li name="money.EGP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EGP"></a>
+      <a id="EGP:EGP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EGP$.html"><span class="name">EGP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@EGP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Egypt Pound
+</p>
+    </li><li name="money.ERN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ERN"></a>
+      <a id="ERN:ERN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ERN$.html"><span class="name">ERN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ERN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Eritrea Nakfa
+</p>
+    </li><li name="money.ETB" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ETB"></a>
+      <a id="ETB:ETB"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ETB$.html"><span class="name">ETB</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ETB" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Ethiopia Birr
+</p>
+    </li><li name="money.EUR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EUR"></a>
+      <a id="EUR:EUR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EUR$.html"><span class="name">EUR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@EUR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Euro Member Countries
+</p>
+    </li><li name="money.FJD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FJD"></a>
+      <a id="FJD:FJD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FJD$.html"><span class="name">FJD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@FJD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Fiji Dollar
+</p>
+    </li><li name="money.FKP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FKP"></a>
+      <a id="FKP:FKP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FKP$.html"><span class="name">FKP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@FKP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Falkland Islands (Malvinas) Pound
+</p>
+    </li><li name="money.GBP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GBP"></a>
+      <a id="GBP:GBP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GBP$.html"><span class="name">GBP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GBP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">United Kingdom Pound
+</p>
+    </li><li name="money.GEL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GEL"></a>
+      <a id="GEL:GEL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GEL$.html"><span class="name">GEL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GEL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Georgia Lari
+</p>
+    </li><li name="money.GGP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GGP"></a>
+      <a id="GGP:GGP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GGP$.html"><span class="name">GGP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GGP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Guernsey Pound
+</p>
+    </li><li name="money.GHS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GHS"></a>
+      <a id="GHS:GHS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GHS$.html"><span class="name">GHS</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GHS" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Ghana Cedi
+</p>
+    </li><li name="money.GIP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GIP"></a>
+      <a id="GIP:GIP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GIP$.html"><span class="name">GIP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GIP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Gibraltar Pound
+</p>
+    </li><li name="money.GMD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GMD"></a>
+      <a id="GMD:GMD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GMD$.html"><span class="name">GMD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GMD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Gambia Dalasi
+</p>
+    </li><li name="money.GNF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GNF"></a>
+      <a id="GNF:GNF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GNF$.html"><span class="name">GNF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GNF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Guinea Franc
+</p>
+    </li><li name="money.GTQ" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GTQ"></a>
+      <a id="GTQ:GTQ"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GTQ$.html"><span class="name">GTQ</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GTQ" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Guatemala Quetzal
+</p>
+    </li><li name="money.GYD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GYD"></a>
+      <a id="GYD:GYD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GYD$.html"><span class="name">GYD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@GYD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Guyana Dollar
+</p>
+    </li><li name="money.HKD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HKD"></a>
+      <a id="HKD:HKD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="HKD$.html"><span class="name">HKD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@HKD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Hong Kong Dollar
+</p>
+    </li><li name="money.HNL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HNL"></a>
+      <a id="HNL:HNL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="HNL$.html"><span class="name">HNL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@HNL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Honduras Lempira
+</p>
+    </li><li name="money.HRK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HRK"></a>
+      <a id="HRK:HRK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="HRK$.html"><span class="name">HRK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@HRK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Croatia Kuna
+</p>
+    </li><li name="money.HTG" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HTG"></a>
+      <a id="HTG:HTG"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="HTG$.html"><span class="name">HTG</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@HTG" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Haiti Gourde
+</p>
+    </li><li name="money.HUF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HUF"></a>
+      <a id="HUF:HUF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="HUF$.html"><span class="name">HUF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@HUF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Hungary Forint
+</p>
+    </li><li name="money.IDR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IDR"></a>
+      <a id="IDR:IDR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IDR$.html"><span class="name">IDR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@IDR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Indonesia Rupiah
+</p>
+    </li><li name="money.ILS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ILS"></a>
+      <a id="ILS:ILS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ILS$.html"><span class="name">ILS</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ILS" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Israel Shekel
+</p>
+    </li><li name="money.IMP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IMP"></a>
+      <a id="IMP:IMP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IMP$.html"><span class="name">IMP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@IMP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Isle of Man Pound
+</p>
+    </li><li name="money.INR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="INR"></a>
+      <a id="INR:INR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="INR$.html"><span class="name">INR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@INR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">India Rupee
+</p>
+    </li><li name="money.IQD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IQD"></a>
+      <a id="IQD:IQD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IQD$.html"><span class="name">IQD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@IQD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Iraq Dinar
+</p>
+    </li><li name="money.IRR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IRR"></a>
+      <a id="IRR:IRR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IRR$.html"><span class="name">IRR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@IRR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Iran Rial
+</p>
+    </li><li name="money.ISK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ISK"></a>
+      <a id="ISK:ISK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ISK$.html"><span class="name">ISK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ISK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Iceland Krona
+</p>
+    </li><li name="money.JEP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JEP"></a>
+      <a id="JEP:JEP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="JEP$.html"><span class="name">JEP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@JEP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Jersey Pound
+</p>
+    </li><li name="money.JMD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JMD"></a>
+      <a id="JMD:JMD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="JMD$.html"><span class="name">JMD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@JMD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Jamaica Dollar
+</p>
+    </li><li name="money.JOD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JOD"></a>
+      <a id="JOD:JOD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="JOD$.html"><span class="name">JOD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@JOD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Jordan Dinar
+</p>
+    </li><li name="money.JPY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JPY"></a>
+      <a id="JPY:JPY"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="JPY$.html"><span class="name">JPY</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@JPY" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Japan Yen
+</p>
+    </li><li name="money.KES" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KES"></a>
+      <a id="KES:KES"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KES$.html"><span class="name">KES</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KES" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Kenya Shilling
+</p>
+    </li><li name="money.KGS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KGS"></a>
+      <a id="KGS:KGS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KGS$.html"><span class="name">KGS</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KGS" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Kyrgyzstan Som
+</p>
+    </li><li name="money.KHR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KHR"></a>
+      <a id="KHR:KHR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KHR$.html"><span class="name">KHR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KHR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cambodia Riel
+</p>
+    </li><li name="money.KMF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMF"></a>
+      <a id="KMF:KMF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KMF$.html"><span class="name">KMF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KMF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Comoros Franc
+</p>
+    </li><li name="money.KPW" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KPW"></a>
+      <a id="KPW:KPW"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KPW$.html"><span class="name">KPW</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KPW" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Korea (North) Won
+</p>
+    </li><li name="money.KRW" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KRW"></a>
+      <a id="KRW:KRW"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KRW$.html"><span class="name">KRW</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KRW" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Korea (South) Won
+</p>
+    </li><li name="money.KWD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KWD"></a>
+      <a id="KWD:KWD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KWD$.html"><span class="name">KWD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KWD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Kuwait Dinar
+</p>
+    </li><li name="money.KYD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KYD"></a>
+      <a id="KYD:KYD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KYD$.html"><span class="name">KYD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KYD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cayman Islands Dollar
+</p>
+    </li><li name="money.KZT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KZT"></a>
+      <a id="KZT:KZT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KZT$.html"><span class="name">KZT</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@KZT" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Kazakhstan Tenge
+</p>
+    </li><li name="money.LAK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LAK"></a>
+      <a id="LAK:LAK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LAK$.html"><span class="name">LAK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@LAK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Laos Kip
+</p>
+    </li><li name="money.LBP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LBP"></a>
+      <a id="LBP:LBP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LBP$.html"><span class="name">LBP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@LBP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Lebanon Pound
+</p>
+    </li><li name="money.LKR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LKR"></a>
+      <a id="LKR:LKR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LKR$.html"><span class="name">LKR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@LKR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sri Lanka Rupee
+</p>
+    </li><li name="money.LRD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LRD"></a>
+      <a id="LRD:LRD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LRD$.html"><span class="name">LRD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@LRD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Liberia Dollar
+</p>
+    </li><li name="money.LSL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LSL"></a>
+      <a id="LSL:LSL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LSL$.html"><span class="name">LSL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@LSL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Lesotho Loti
+</p>
+    </li><li name="money.LTL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LTL"></a>
+      <a id="LTL:LTL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LTL$.html"><span class="name">LTL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@LTL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Lithuania Litas
+</p>
+    </li><li name="money.LYD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LYD"></a>
+      <a id="LYD:LYD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LYD$.html"><span class="name">LYD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@LYD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Libya Dinar
+</p>
+    </li><li name="money.MAD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MAD"></a>
+      <a id="MAD:MAD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MAD$.html"><span class="name">MAD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MAD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Morocco Dirham
+</p>
+    </li><li name="money.MDL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MDL"></a>
+      <a id="MDL:MDL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MDL$.html"><span class="name">MDL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MDL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Moldova Leu
+</p>
+    </li><li name="money.MGA" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MGA"></a>
+      <a id="MGA:MGA"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MGA$.html"><span class="name">MGA</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MGA" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Madagascar Ariary
+</p>
+    </li><li name="money.MKD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MKD"></a>
+      <a id="MKD:MKD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MKD$.html"><span class="name">MKD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MKD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Macedonia Denar
+</p>
+    </li><li name="money.MMK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MMK"></a>
+      <a id="MMK:MMK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MMK$.html"><span class="name">MMK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MMK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Myanmar (Burma) Kyat
+</p>
+    </li><li name="money.MNT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MNT"></a>
+      <a id="MNT:MNT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MNT$.html"><span class="name">MNT</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MNT" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mongolia Tughrik
+</p>
+    </li><li name="money.MOP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MOP"></a>
+      <a id="MOP:MOP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MOP$.html"><span class="name">MOP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MOP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Macau Pataca
+</p>
+    </li><li name="money.MRO" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MRO"></a>
+      <a id="MRO:MRO"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MRO$.html"><span class="name">MRO</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MRO" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mauritania Ouguiya
+</p>
+    </li><li name="money.MUR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MUR"></a>
+      <a id="MUR:MUR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MUR$.html"><span class="name">MUR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MUR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mauritius Rupee
+</p>
+    </li><li name="money.MVR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MVR"></a>
+      <a id="MVR:MVR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MVR$.html"><span class="name">MVR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MVR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Maldives (Maldive Islands) Rufiyaa
+</p>
+    </li><li name="money.MWK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MWK"></a>
+      <a id="MWK:MWK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MWK$.html"><span class="name">MWK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MWK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Malawi Kwacha
+</p>
+    </li><li name="money.MXN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MXN"></a>
+      <a id="MXN:MXN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MXN$.html"><span class="name">MXN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MXN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mexico Peso
+</p>
+    </li><li name="money.MYR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MYR"></a>
+      <a id="MYR:MYR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MYR$.html"><span class="name">MYR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MYR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Malaysia Ringgit
+</p>
+    </li><li name="money.MZN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MZN"></a>
+      <a id="MZN:MZN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MZN$.html"><span class="name">MZN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@MZN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mozambique Metical
+</p>
+    </li><li name="money.NAD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NAD"></a>
+      <a id="NAD:NAD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NAD$.html"><span class="name">NAD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@NAD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Namibia Dollar
+</p>
+    </li><li name="money.NGN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NGN"></a>
+      <a id="NGN:NGN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NGN$.html"><span class="name">NGN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@NGN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Nigeria Naira
+</p>
+    </li><li name="money.NIO" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NIO"></a>
+      <a id="NIO:NIO"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NIO$.html"><span class="name">NIO</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@NIO" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Nicaragua Cordoba
+</p>
+    </li><li name="money.NOK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NOK"></a>
+      <a id="NOK:NOK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NOK$.html"><span class="name">NOK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@NOK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Norway Krone
+</p>
+    </li><li name="money.NPR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NPR"></a>
+      <a id="NPR:NPR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NPR$.html"><span class="name">NPR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@NPR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Nepal Rupee
+</p>
+    </li><li name="money.NZD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NZD"></a>
+      <a id="NZD:NZD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NZD$.html"><span class="name">NZD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@NZD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">New Zealand Dollar
+</p>
+    </li><li name="money.OMR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OMR"></a>
+      <a id="OMR:OMR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OMR$.html"><span class="name">OMR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@OMR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Oman Rial
+</p>
+    </li><li name="money.PAB" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PAB"></a>
+      <a id="PAB:PAB"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PAB$.html"><span class="name">PAB</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@PAB" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Panama Balboa
+</p>
+    </li><li name="money.PEN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PEN"></a>
+      <a id="PEN:PEN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PEN$.html"><span class="name">PEN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@PEN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Peru Nuevo Sol
+</p>
+    </li><li name="money.PGK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PGK"></a>
+      <a id="PGK:PGK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PGK$.html"><span class="name">PGK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@PGK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Papua New Guinea Kina
+</p>
+    </li><li name="money.PHP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PHP"></a>
+      <a id="PHP:PHP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PHP$.html"><span class="name">PHP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@PHP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Philippines Peso
+</p>
+    </li><li name="money.PKR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PKR"></a>
+      <a id="PKR:PKR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PKR$.html"><span class="name">PKR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@PKR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Pakistan Rupee
+</p>
+    </li><li name="money.PLN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PLN"></a>
+      <a id="PLN:PLN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PLN$.html"><span class="name">PLN</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@PLN" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Poland Zloty
+</p>
+    </li><li name="money.PYG" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PYG"></a>
+      <a id="PYG:PYG"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PYG$.html"><span class="name">PYG</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@PYG" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Paraguay Guarani
+</p>
+    </li><li name="money.QAR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="QAR"></a>
+      <a id="QAR:QAR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="QAR$.html"><span class="name">QAR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@QAR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Qatar Riyal
+</p>
+    </li><li name="money.RON" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RON"></a>
+      <a id="RON:RON"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RON$.html"><span class="name">RON</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@RON" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Romania New Leu
+</p>
+    </li><li name="money.RSD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RSD"></a>
+      <a id="RSD:RSD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RSD$.html"><span class="name">RSD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@RSD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Serbia Dinar
+</p>
+    </li><li name="money.RUB" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RUB"></a>
+      <a id="RUB:RUB"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RUB$.html"><span class="name">RUB</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@RUB" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Russia Ruble
+</p>
+    </li><li name="money.RWF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RWF"></a>
+      <a id="RWF:RWF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RWF$.html"><span class="name">RWF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@RWF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rwanda Franc
+</p>
+    </li><li name="money.SAR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SAR"></a>
+      <a id="SAR:SAR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SAR$.html"><span class="name">SAR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SAR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Saudi Arabia Riyal
+</p>
+    </li><li name="money.SBD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SBD"></a>
+      <a id="SBD:SBD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SBD$.html"><span class="name">SBD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SBD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Solomon Islands Dollar
+</p>
+    </li><li name="money.SCR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SCR"></a>
+      <a id="SCR:SCR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SCR$.html"><span class="name">SCR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SCR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Seychelles Rupee
+</p>
+    </li><li name="money.SDG" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SDG"></a>
+      <a id="SDG:SDG"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SDG$.html"><span class="name">SDG</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SDG" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sudan Pound
+</p>
+    </li><li name="money.SEK" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SEK"></a>
+      <a id="SEK:SEK"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SEK$.html"><span class="name">SEK</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SEK" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sweden Krona
+</p>
+    </li><li name="money.SGD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SGD"></a>
+      <a id="SGD:SGD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SGD$.html"><span class="name">SGD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SGD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Singapore Dollar
+</p>
+    </li><li name="money.SHP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SHP"></a>
+      <a id="SHP:SHP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SHP$.html"><span class="name">SHP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SHP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Saint Helena Pound
+</p>
+    </li><li name="money.SLL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SLL"></a>
+      <a id="SLL:SLL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SLL$.html"><span class="name">SLL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SLL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sierra Leone Leone
+</p>
+    </li><li name="money.SOS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SOS"></a>
+      <a id="SOS:SOS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SOS$.html"><span class="name">SOS</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SOS" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Somalia Shilling
+</p>
+    </li><li name="money.SPL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SPL"></a>
+      <a id="SPL:SPL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SPL$.html"><span class="name">SPL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SPL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Seborga Luigino
+</p>
+    </li><li name="money.SRD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SRD"></a>
+      <a id="SRD:SRD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SRD$.html"><span class="name">SRD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SRD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Suriname Dollar
+</p>
+    </li><li name="money.STD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="STD"></a>
+      <a id="STD:STD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="STD$.html"><span class="name">STD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@STD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">São Tomé and Príncipe Dobra
+</p>
+    </li><li name="money.SVC" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SVC"></a>
+      <a id="SVC:SVC"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SVC$.html"><span class="name">SVC</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SVC" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">El Salvador Colon
+</p>
+    </li><li name="money.SYP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SYP"></a>
+      <a id="SYP:SYP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SYP$.html"><span class="name">SYP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SYP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Syria Pound
+</p>
+    </li><li name="money.SZL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SZL"></a>
+      <a id="SZL:SZL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SZL$.html"><span class="name">SZL</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@SZL" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Swaziland Lilangeni
+</p>
+    </li><li name="money.THB" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="THB"></a>
+      <a id="THB:THB"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="THB$.html"><span class="name">THB</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@THB" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Thailand Baht
+</p>
+    </li><li name="money.TJS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TJS"></a>
+      <a id="TJS:TJS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TJS$.html"><span class="name">TJS</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TJS" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tajikistan Somoni
+</p>
+    </li><li name="money.TMT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TMT"></a>
+      <a id="TMT:TMT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TMT$.html"><span class="name">TMT</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TMT" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Turkmenistan Manat
+</p>
+    </li><li name="money.TND" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TND"></a>
+      <a id="TND:TND"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TND$.html"><span class="name">TND</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TND" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tunisia Dinar
+</p>
+    </li><li name="money.TOP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TOP"></a>
+      <a id="TOP:TOP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TOP$.html"><span class="name">TOP</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TOP" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tonga Pa'anga
+</p>
+    </li><li name="money.TRY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TRY"></a>
+      <a id="TRY:TRY"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TRY$.html"><span class="name">TRY</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TRY" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Turkey Lira
+</p>
+    </li><li name="money.TTD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TTD"></a>
+      <a id="TTD:TTD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TTD$.html"><span class="name">TTD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TTD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trinidad and Tobago Dollar
+</p>
+    </li><li name="money.TVD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TVD"></a>
+      <a id="TVD:TVD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TVD$.html"><span class="name">TVD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TVD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tuvalu Dollar
+</p>
+    </li><li name="money.TWD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TWD"></a>
+      <a id="TWD:TWD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TWD$.html"><span class="name">TWD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TWD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Taiwan New Dollar
+</p>
+    </li><li name="money.TZS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TZS"></a>
+      <a id="TZS:TZS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TZS$.html"><span class="name">TZS</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@TZS" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tanzania Shilling
+</p>
+    </li><li name="money.UAH" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UAH"></a>
+      <a id="UAH:UAH"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UAH$.html"><span class="name">UAH</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@UAH" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Ukraine Hryvnia
+</p>
+    </li><li name="money.UGX" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UGX"></a>
+      <a id="UGX:UGX"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UGX$.html"><span class="name">UGX</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@UGX" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Uganda Shilling
+</p>
+    </li><li name="money.USD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="USD"></a>
+      <a id="USD:USD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="USD$.html"><span class="name">USD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@USD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">United States Dollar
+</p>
+    </li><li name="money.UYU" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UYU"></a>
+      <a id="UYU:UYU"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UYU$.html"><span class="name">UYU</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@UYU" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Uruguay Peso
+</p>
+    </li><li name="money.UZS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UZS"></a>
+      <a id="UZS:UZS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UZS$.html"><span class="name">UZS</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@UZS" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Uzbekistan Som
+</p>
+    </li><li name="money.VEF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VEF"></a>
+      <a id="VEF:VEF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VEF$.html"><span class="name">VEF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@VEF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Venezuela Bolivar
+</p>
+    </li><li name="money.VND" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VND"></a>
+      <a id="VND:VND"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VND$.html"><span class="name">VND</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@VND" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Viet Nam Dong
+</p>
+    </li><li name="money.VUV" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VUV"></a>
+      <a id="VUV:VUV"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VUV$.html"><span class="name">VUV</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@VUV" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Vanuatu Vatu
+</p>
+    </li><li name="money.WST" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WST"></a>
+      <a id="WST:WST"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WST$.html"><span class="name">WST</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@WST" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Samoa Tala
+</p>
+    </li><li name="money.XCD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="XCD"></a>
+      <a id="XCD:XCD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="XCD$.html"><span class="name">XCD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@XCD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">East Caribbean Dollar
+</p>
+    </li><li name="money.XDR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="XDR"></a>
+      <a id="XDR:XDR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="XDR$.html"><span class="name">XDR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@XDR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">International Monetary Fund (IMF) Special Drawing Rights
+</p>
+    </li><li name="money.XOF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="XOF"></a>
+      <a id="XOF:XOF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="XOF$.html"><span class="name">XOF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@XOF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Communauté Financière Africaine (BCEAO) Franc
+</p>
+    </li><li name="money.XPF" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="XPF"></a>
+      <a id="XPF:XPF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="XPF$.html"><span class="name">XPF</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@XPF" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Comptoirs Français du Pacifique (CFP) Franc
+</p>
+    </li><li name="money.YER" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="YER"></a>
+      <a id="YER:YER"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="YER$.html"><span class="name">YER</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@YER" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Yemen Rial
+</p>
+    </li><li name="money.ZAR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZAR"></a>
+      <a id="ZAR:ZAR"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZAR$.html"><span class="name">ZAR</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ZAR" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">South Africa Rand
+</p>
+    </li><li name="money.ZMW" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZMW"></a>
+      <a id="ZMW:ZMW"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZMW$.html"><span class="name">ZMW</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ZMW" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Zambia Kwacha
+</p>
+    </li><li name="money.ZWD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZWD"></a>
+      <a id="ZWD:ZWD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZWD$.html"><span class="name">ZWD</span></a><span class="result"> extends <a href="Currency.html" class="extype" name="money.Currency">Currency</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@ZWD" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Zimbabwe Dollar
+</p>
+    </li><li name="money#numericMoney" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="numericMoney(implicitconverter:money.Converter):money.NumericMoney"></a>
+      <a id="numericMoney(Converter):NumericMoney"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">numericMoney</span><span class="params">(<span class="implicit">implicit </span><span name="converter">converter: <a href="Converter.html" class="extype" name="money.Converter">Converter</a></span>)</span><span class="result">: <a href="NumericMoney.html" class="extype" name="money.NumericMoney">NumericMoney</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@numericMoney(implicitconverter:money.Converter):money.NumericMoney" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="money#toFormattedString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toFormattedString(value:BigDecimal,decimalDigits:Int,roundingMode:math.BigDecimal.RoundingMode.RoundingMode):String"></a>
+      <a id="toFormattedString(BigDecimal,Int,RoundingMode):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toFormattedString</span><span class="params">(<span name="value">value: <span class="extype" name="scala.BigDecimal">BigDecimal</span></span>, <span name="decimalDigits">decimalDigits: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">5</span></span>, <span name="roundingMode">roundingMode: <span class="extype" name="scala.math.BigDecimal.RoundingMode.RoundingMode">RoundingMode</span> = <span class="symbol">RoundingMode.HALF_DOWN</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#money.package@toFormattedString(value:BigDecimal,decimalDigits:Int,roundingMode:math.BigDecimal.RoundingMode.RoundingMode):String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Formats the BigDecimal value using a number of decimal digits equals to the decimalDigits param, which defaults to 5.</p><div class="fullcomment"><div class="comment cmt"><p>Formats the BigDecimal value using a number of decimal digits equals to the decimalDigits param, which defaults to 5.
+</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>the BigDecimal value to format</p></dd><dt class="param">decimalDigits</dt><dd class="cmt"><p>the number of decimal digits to include. The valid range is [0, 100], both inclusive</p></dd><dt>returns</dt><dd class="cmt"><p>a formatted string representing the value passed as a parameter</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
